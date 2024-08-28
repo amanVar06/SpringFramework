@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    only the beans which mentioned here for those object get created in IOC container
+ for each bean one object created in IOC container , beans are nothing classes managed by Spring-->
+    <bean id="dev" class="com.amanv.Dev" autowire="byType">
+<!--        property tag will use setter, setter injection -->
+<!--        <property name="age" value="12"/>-->
+<!--        constructor-arg will use - constructor injection
+only parameterized container will get called -->
+<!--       <constructor-arg name="age" value="14"/>-->
+
+<!--        setter injection for object type -->
+<!--        <property name="laptop" ref="laptop_1" />  -->
+<!--        constructor injection for object type -->
+<!--        <constructor-arg name="laptop" ref="laptop_1" />-->
+
+<!--        <property name="computer" ref="laptop_1" />-->
+    </bean>
+
+<!--    This will create another object of Dev class-->
+<!--    <bean id="dev1" class="com.amanv.Dev">-->
+<!--    </bean>-->
+
+    <bean id="laptop_1" class="com.amanv.Laptop" primary="true">
+    </bean>
+
+    <bean id="desktop_1" class="com.amanv.Desktop">
+    </bean>
+
+</beans>
